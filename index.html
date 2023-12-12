@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      color: #fff;
+    }
+    canvas {
+      border-radius: 10px;
+      background-color: #2a2a2a;
+    }
+    .params-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #2a2a2a;
+    }
+    .params {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      flex-grow: 1;
+    }
+    .param {
+      display: flex;
+      justify-content: space-between;
+    }
+    h3 {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="params-section">
+    <h2>Paramètres</h2>
+
+    <div class="params">
+      <article>
+        <h3>Nombre de particules</h3>
+        <div class="param"><label for="blueNb">Blue</label> <input type="range" id="blueNb" min="0" max="500" value="200" /></div>
+        <div class="param"><label for="redNb">Red</label> <input type="range" id="redNb" min="0" max="500" value="200" /></div>
+        <div class="param"><label for="greenNb">Green</label> <input type="range" id="greenNb" min="0" max="500" value="200" /></div>
+        <div class="param"><label for="yellowNb">Yellow</label> <input type="range" id="yellowNb" min="0" max="500" value="200" />    </div>
+      </article>
+
+      <article>
+        <h3>Rayon d'intéraction</h3>
+        <div class="param"><label for="blueRad">Blue</label> <input type="range" id="blueRad" min="50" max="500" value="200" /></div>
+        <div class="param"><label for="redRad">Red</label> <input type="range" id="redRad" min="50" max="500" value="200" /></div>
+        <div class="param"><label for="greenRad">Green</label> <input type="range" id="greenRad" min="50" max="500" value="200" /></div>
+        <div class="param"><label for="yellowRad">Yellow</label> <input type="range" id="yellowRad" min="50" max="500" value="200" />    </div>
+      </article>
+
+      <article>
+        <h3>Bleu</h3>
+        <div class="param"><label for="bxb">B-B</label> <input type="range" id="bxb" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="bxr">B-R</label> <input type="range" id="bxr" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="bxg">B-G</label> <input type="range" id="bxg" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="bxy">B-Y</label> <input type="range" id="bxy" min="-1" max="1" step="0.01" /></div>
+      </article>
+
+      <article>
+        <h3>Rouge</h3>
+        <div class="param"><label for="rxr">R-R</label> <input type="range" id="rxr" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="rxb">R-B</label> <input type="range" id="rxb" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="rxg">R-G</label> <input type="range" id="rxg" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="rxy">R-Y</label> <input type="range" id="rxy" min="-1" max="1" step="0.01" /></div>
+      </article>
+
+      <article>
+        <h3>Vert</h3>
+        <div class="param"><label for="gxg">G-G</label> <input type="range" id="gxg" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="gxr">G-R</label> <input type="range" id="gxr" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="gxb">G-B</label> <input type="range" id="gxb" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="gxy">G-Y</label> <input type="range" id="gxy" min="-1" max="1" step="0.01" /></div>
+      </article>
+
+      <article>
+        <h3>Jaune</h3>
+        <div class="param"><label for="yxy">Y-Y</label> <input type="range" id="yxy" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="yxg">Y-G</label> <input type="range" id="yxg" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="yxr">Y-R</label> <input type="range" id="yxr" min="-1" max="1" step="0.01" /></div>
+        <div class="param"><label for="yxb">Y-B</label> <input type="range" id="yxb" min="-1" max="1" step="0.01" /></div>
+      </article>
+    </div>
+
+    <div class="buttons">
+      <button id="start">Start</button>
+      <button id="randomize">Randomize</button>
+    </div>
+  </section>
+
+  <canvas id="ctx"></canvas>
+  <script src="./main.js"></script>
+</body>
+</html>
